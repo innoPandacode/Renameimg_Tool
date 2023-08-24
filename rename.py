@@ -3,7 +3,7 @@ import os
 # 目標資料夾路徑
 destination_dir = r'C:\Users\PC\Desktop\新增資料夾'
 
-def rename_jpg_files(folder_path):
+def rename_image_files(folder_path):
     # 獲取目錄中的檔案列表並進行排序
     file_list = os.listdir(folder_path)
     file_list.sort()
@@ -11,7 +11,7 @@ def rename_jpg_files(folder_path):
     # 索引計數，用於生成新的檔案名稱
     index = 1
     for filename in file_list:
-        if filename.lower().endswith('.jpg'):
+        if filename.lower().endswith(('.jpg', '.png')):
             # 獲取檔案副檔名
             _, file_extension = os.path.splitext(filename)
 
@@ -37,4 +37,4 @@ def rename_jpg_files(folder_path):
 
 # 遍歷目標資料夾中的所有子目錄
 for root, _, _ in os.walk(destination_dir):
-    rename_jpg_files(root)
+    rename_image_files(root)
