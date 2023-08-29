@@ -17,7 +17,7 @@ def rename_jpg_files(folder_path):
 
             # 檢查檔案名是否以4位數字和底線開頭
             if filename[:5].replace('_', '').isdigit():
-                # 將現有的五位數字和底線替換為索引值和底線
+                # 將現有的4位數字和底線替換為索引值和底線
                 new_filename = f'{index:04d}_{filename[6:]}'
             else:
                 # 在檔案名前添加4位索引和底線
